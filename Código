@@ -8,14 +8,11 @@ Dejar en una función el método del gradiente.
 """
 import numpy as np
 
-
- 
 #Sistema de ecuaciones que resolverá:
-A = np.array([[2.0, 1.0, -3.0], [5.0, -4.0, 1.0], [1.0, -1.0, -4.0]])
-b = np.array([7.0, -19.0, 4.0])
+A = np.array([[4.0, -1.0, 1.0], [-1.0, 4.0, -2.0], [1.0, -2.0, 4.0]])
+b = np.array([12.0, -1.0, 5.0])
 
 x_sol = np.array([1.0, 1.0, 1.0])
-
 
 def gradient(x, A, b):
 	element_1 = np.dot(np.transpose(A),np.dot(A, x))
@@ -33,4 +30,3 @@ def linear_solve(M, v, x_start, umbral, max_iter):
             return x_start
 
 print(linear_solve(A, b, x_sol, 0.001, 10000))
-
